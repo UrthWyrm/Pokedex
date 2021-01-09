@@ -33,7 +33,7 @@ const HomeScreen = props => {
             title="Current Card"
             results={filterResults('Pokémon')}
              />
-            <Text style={styles.textStyle}>You Can Do EEET!!</Text>
+            <Text style={styles.textStyle}>You Can Do EEEET!!</Text>
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <Text>{results.length}</Text>
         </View>
