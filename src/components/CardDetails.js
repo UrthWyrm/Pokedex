@@ -21,7 +21,7 @@ const CardDetails = ({ result }) => {
 const styles = StyleSheet.create({
     imageStyle: {
         flex: 1,
-        alignContent: 'center',
+        alignItems: 'center',
         justifyContent: 'center',
         width: 380,
         height: 250,

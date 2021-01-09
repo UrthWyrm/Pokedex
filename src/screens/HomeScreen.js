@@ -4,8 +4,8 @@ import SearchBar from '../components/SearchBar';
 import DexResults from '../hooks/DexResults';
 import CardList from '../components/CardList';
 
-const HomeScreen = props => {
-    console.log(props);
+const HomeScreen = () => {
+    // console.log(props);
     const [term, setTerm] = useState('');
     const [searchApi, results, errorMessage] = DexResults();
     
@@ -22,7 +22,8 @@ const HomeScreen = props => {
         <View style={{
             flex: 1,
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            backgroundColor: 'gray'
         }}>
             <SearchBar 
               term={term} 

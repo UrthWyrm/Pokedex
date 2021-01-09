@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import CardDetails from './CardDetails';
 
-const CardList = ({ title, results }) => {
+const CardList = ({ title, results, navigation }) => {
     return (
         <View style={{
             flex: 1,
@@ -16,9 +17,13 @@ const CardList = ({ title, results }) => {
                 data={results}
                 keyExtractor={(result) => result.id}
                 renderItem={({ item }) => {
-                    return <CardDetails result={item} />;
+                    return (
+                        <TouchableOpacity onPress={() => navigation.navigate('Stats')}>
+                            <CardDetails result={item} />
+                        </TouchableOpacity>
+                    )
                 }}
-                />
+            />
         </View>
     );
 };
@@ -30,4 +35,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default CardList;
+export default withNavigation(CardList);
