@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
 import Poke from '../api/Poke';
 
 const CardStats = ({ navigation }) => {
     const [result, setResult] = useState(null);
     const id = navigation.getParam('id');
+    const [colors, setColors] = useState([]);
+
+    const randomRgb = () => {
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+
+        return `rgb(${red}, ${green}, ${blue})`;
+    }
 
     console.log(result);
 
@@ -30,10 +39,27 @@ const CardStats = ({ navigation }) => {
             <Text style={styles.textStyle}>Name: {result.card.name}</Text>
             <Text style={styles.textStyle}>Health: {result.card.hp}</Text>
             <Text style={styles.textStyle}>National Pokedex Number: {result.card.nationalPokedexNumber}</Text>
+            <Image 
+            style={styles.imageStyle} 
+            source={{ uri: result.card.imageUrlHiRes}} 
+            />
+            <TouchableOpacity
+              style={{
+                width: 50,
+                height: 50,
+                borderWidth: 10,
+                backgroundColor: randomRgb()
+              }}
+              onPress = {() => {
+                  setColors(randomRgb());
+              }}
+              
+              
+            />
 
             {/* <FlatList
               style={styles.listStyle}
-              data={result.imageUrl}
+              data={result.card.imageUrlHiRes}
               keyExtractor={photo => photo} 
               renderItem={({ item }) => {
                   return <Image style={styles.imageStyle} source={{ uri: item }} />
@@ -55,7 +81,13 @@ const styles = StyleSheet.create({
     },
     imageStyle: {
         width: 250,
-        height: 250,
+        height: 350,
+    },
+    buttonStyle: {
+        width: 50,
+        height: 50,
+        borderWidth: 10,
+        backgroundColor: 'white'
     }
 
 });

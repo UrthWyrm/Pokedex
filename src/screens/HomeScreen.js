@@ -34,9 +34,9 @@ const HomeScreen = () => {
             title="Current Card"
             results={filterResults('Pokémon')}
              />
-            <Text style={styles.textStyle}>You Can Do EEET!!</Text>
+            {/* <Text style={styles.textStyle}>You Can Do EEET!!</Text> */}
             {errorMessage ? <Text>{errorMessage}</Text> : null}
-            <Text>{results.length}</Text>
+            {/* <Text>{results.length}</Text> */}
         </View>
     );
 };
