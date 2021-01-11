@@ -18,7 +18,7 @@ const CardList = ({ title, results, navigation }) => {
                 keyExtractor={(result) => result.id}
                 renderItem={({ item }) => {
                     return (
-                        <TouchableOpacity onPress={() => navigation.navigate('Stats')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Stats', { id: item.id })}>
                             <CardDetails result={item} />
                         </TouchableOpacity>
                     )
