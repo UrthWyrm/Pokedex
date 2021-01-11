@@ -12,7 +12,7 @@ const CardDetails = ({ result }) => {
             <Text style={styles.textStyle}>{result.name}</Text>
             <Image 
             style={styles.imageStyle} 
-            source={{ uri: result.imageUrl}} 
+            source={{ uri: result.imageUrlHiRes}} 
             />
         </View>
     );
