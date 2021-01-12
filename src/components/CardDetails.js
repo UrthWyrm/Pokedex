@@ -29,7 +29,7 @@ const CardDetails = ({ result }) => {
                 // backgroundColor: randomRgb()
               }}>
                   <Text style={{right: 10}}>Favorite</Text>
-                  <AntDesign name="hearto" size={24} color="black" />
+                  <AntDesign name="heart" size={24} color="red" />
               </TouchableOpacity>
         </View>
     );
