@@ -22,7 +22,7 @@ const navigator = createStackNavigator({
 {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
-    headerBackground: (
+    headerBackground: () => (
       <Image
         style={{
           flex: 1,
