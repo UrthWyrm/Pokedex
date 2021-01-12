@@ -10,8 +10,16 @@ const navigator = createStackNavigator({
 {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
-    title: 'Pokedex'
-  }
+    title: 'Pokedex',
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  },
+  
 });
 
 export default createAppContainer(navigator);

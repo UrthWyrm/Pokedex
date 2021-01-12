@@ -31,7 +31,7 @@ const HomeScreen = () => {
               onTermSubmit={() => searchApi(term)}
             />
             <CardList 
-            title="Current Card"
+            // title="Current Card"
             results={filterResults('Pokémon')}
              />
             {/* <Text style={styles.textStyle}>You Can Do EEET!!</Text> */}

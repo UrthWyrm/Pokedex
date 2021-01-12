@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 const CardDetails = ({ result }) => {
     return (
@@ -14,6 +15,22 @@ const CardDetails = ({ result }) => {
             style={styles.imageStyle} 
             source={{ uri: result.imageUrlHiRes}} 
             />
+            <TouchableOpacity
+              style={{
+                width: 150,
+                height: 50,
+                borderWidth: 3,
+                borderRadius: 5,
+                alignItems: 'center',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                left: 135,
+                backgroundColor: 'white'
+                // backgroundColor: randomRgb()
+              }}>
+                  <Text style={{right: 10}}>Favorite</Text>
+                  <AntDesign name="hearto" size={24} color="black" />
+              </TouchableOpacity>
         </View>
     );
 };
@@ -26,13 +43,15 @@ const styles = StyleSheet.create({
         width: 380,
         height: 250,
         margin: 10,
-        marginBottom: 70,
-        borderRadius: 5
+        // marginBottom: 70,
+        borderRadius: 5,
+        // borderWidth: 12
 
     },
     textStyle: {
         textAlign: 'center',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 25
     }
 
 });

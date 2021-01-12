@@ -11,7 +11,7 @@ const CardList = ({ title, results, navigation }) => {
             justifyContent: 'center'
         }}>
             <Text style={styles.titleStyle}>{title}</Text>
-            <Text>{results.length}</Text>
+            {/* <Text>{results.length}</Text> */}
             <FlatList
                 horizontal={true}
                 data={results}
